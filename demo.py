@@ -35,6 +35,8 @@ def crop_face(frame, landmarks, scale=1.0, image_size=224):
 
 
 if __name__ == '__main__':
+    import ipdb
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--input_path', type=str, default='samples/mead_90.png', help='Path to the input image/video')
@@ -49,6 +51,7 @@ if __name__ == '__main__':
 
     image_size = 224
     
+    ipdb.set_trace()
 
     # ----------------------- initialize configuration ----------------------- #
     smirk_encoder = SmirkEncoder().to(args.device)
@@ -58,6 +61,8 @@ if __name__ == '__main__':
     smirk_encoder.load_state_dict(checkpoint_encoder)
     smirk_encoder.eval()
 
+
+    # not using
     if args.use_smirk_generator:
         from src.smirk_generator import SmirkGenerator
         smirk_generator = SmirkGenerator(in_channels=6, out_channels=3, init_features=32, res_blocks=5).to(args.device)
@@ -67,14 +72,12 @@ if __name__ == '__main__':
         smirk_generator.eval()
 
     # ---- visualize the results ---- #
-
     flame = FLAME().to(args.device)
     renderer = Renderer().to(args.device)
 
-    # check if input is an image or a video or webcam or directory
-    
 
-    
+    ipdb.set_trace()
+    # check if input is an image or a video or webcam or directory
     image = cv2.imread(args.input_path)
     orig_image_height, orig_image_width, _ = image.shape
 
@@ -104,6 +107,8 @@ if __name__ == '__main__':
     cropped_image = torch.tensor(cropped_image).permute(2,0,1).unsqueeze(0).float()/255.0
     cropped_image = cropped_image.to(args.device)
 
+    # doing forwoard pass
+    ipdb.set_trace()
     outputs = smirk_encoder(cropped_image)
 
 
@@ -113,7 +118,7 @@ if __name__ == '__main__':
     
     rendered_img = renderer_output['rendered_img']
 
-
+    ipdb.set_trace()
     if args.render_orig:
         if args.crop:
             rendered_img_numpy = (rendered_img.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0).astype(np.uint8)               
@@ -181,6 +186,8 @@ if __name__ == '__main__':
         else:
             grid = torch.cat([grid, reconstructed_img], dim=3)
 
+
+    ipdb.set_trace()
     grid_numpy = grid.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0
     grid_numpy = grid_numpy.astype(np.uint8)
     grid_numpy = cv2.cvtColor(grid_numpy, cv2.COLOR_BGR2RGB)

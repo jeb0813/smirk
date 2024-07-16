@@ -15,7 +15,7 @@ class PoseEncoder(nn.Module):
     def __init__(self) -> None:
         super().__init__()
               
-        self.encoder, feature_dim = create_backbone('tf_mobilenetv3_small_minimal_100')
+        self.encoder, feature_dim = create_backbone('checkpoints/tf_mobilenetv3_small_minimal_100')
         
         self.pose_cam_layers = nn.Sequential(
             nn.Linear(feature_dim, 6)

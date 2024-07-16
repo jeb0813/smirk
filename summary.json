@@ -1,0 +1,95 @@
+{
+    "M003": {
+        "angry": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 30
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 90
+        },
+        "contempt": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 29
+            },
+            "level_3": {
+                "len": 29
+            },
+            "len": 88
+        },
+        "disgusted": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 29
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 89
+        },
+        "fear": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 30
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 90
+        },
+        "happy": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 30
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 90
+        },
+        "neutral": {
+            "level_1": {
+                "len": 40
+            },
+            "len": 40
+        },
+        "sad": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 30
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 90
+        },
+        "surprised": {
+            "level_1": {
+                "len": 30
+            },
+            "level_2": {
+                "len": 30
+            },
+            "level_3": {
+                "len": 30
+            },
+            "len": 90
+        },
+        "len": 667
+    }
+}

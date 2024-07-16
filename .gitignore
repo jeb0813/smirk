@@ -10,3 +10,9 @@ assets/LRS3_lists.pkl
 assets/MEAD_lists.pkl
 .vscode
 __pycache__/
+
+
+checkpoints/
+results/
+
+*.npz

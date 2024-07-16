@@ -228,7 +228,6 @@ class FLAME(nn.Module):
                                          self.full_lmk_bary_coords.repeat(bz, 1, 1))
         return vertices, landmarks2d, landmarks3d
 
-
     def forward(self, param_dictionary, zero_expression=False, zero_shape=False, zero_pose=False):
         shape_params = param_dictionary['shape_params']
         expression_params = param_dictionary['expression_params']
