@@ -20,6 +20,7 @@ def remove_extra_cam_views(dataset_path):
                 print(f'Removing {view} from {subject}...') 
                 os.system(f'rm -r {view_path}')
 
+
 def remove_view_folder(dataset_path):
     for subject in sorted(os.listdir(dataset_path)):
         video_path = os.path.join(dataset_path, subject, 'video')
@@ -56,7 +57,6 @@ def check_vid_num(dataset_path):
             for level in d_audio[emo]:
                 assert len(d_audio[emo][level]) == len(d_video[emo][level]), f'{subject} {emo} {level} {len(d_audio[emo][level])} {len(d_video[emo][level])}'
                 print(f'{subject} {emo} {level} {len(d_audio[emo][level])} {len(d_video[emo][level])}')
-
 
 
 def get_subject_struct(subject_path):
@@ -155,7 +155,7 @@ def rename_vids(dataset_path):
                     #         os.path.join(level_path, vid)\
                     #             ), f'{subject} {emo} {level} {vid}'
 
-                    
+            
 
 
 def check_vid_aud_pair(aud_path,vid_path):

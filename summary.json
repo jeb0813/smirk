@@ -1,95 +1,1271 @@
 {
     "M003": {
         "angry": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 30
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 90
+            "count": 90
         },
         "contempt": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 29
-            },
-            "level_3": {
-                "len": 29
-            },
-            "len": 88
+            "count": 88
         },
         "disgusted": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 29
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 89
+            "count": 89
         },
         "fear": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 30
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 90
+            "count": 90
         },
         "happy": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 30
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 90
+            "count": 90
         },
         "neutral": {
-            "level_1": {
-                "len": 40
-            },
-            "len": 40
+            "count": 40
         },
         "sad": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 30
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 90
+            "count": 90
         },
         "surprised": {
-            "level_1": {
-                "len": 30
-            },
-            "level_2": {
-                "len": 30
-            },
-            "level_3": {
-                "len": 30
-            },
-            "len": 90
+            "count": 90
         },
-        "len": 667
+        "count": 667
+    },
+    "M005": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 87
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 88
+        },
+        "count": 662
+    },
+    "M007": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 77
+        },
+        "disgusted": {
+            "count": 84
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 648
+    },
+    "M009": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 87
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 58
+        },
+        "count": 625
+    },
+    "M011": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M012": {
+        "angry": {
+            "count": 88
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 87
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 665
+    },
+    "M013": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 89
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 89
+        },
+        "count": 668
+    },
+    "M019": {
+        "angry": {
+            "count": 83
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 663
+    },
+    "M022": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 89
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 666
+    },
+    "M023": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 86
+        },
+        "neutral": {
+            "count": 36
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 659
+    },
+    "M024": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 87
+        },
+        "count": 664
+    },
+    "M025": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M026": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 89
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 666
+    },
+    "M027": {
+        "angry": {
+            "count": 84
+        },
+        "contempt": {
+            "count": 89
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 89
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 662
+    },
+    "M028": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 86
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 663
+    },
+    "M029": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M030": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 87
+        },
+        "fear": {
+            "count": 77
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 85
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 646
+    },
+    "M031": {
+        "angry": {
+            "count": 83
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 89
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 662
+    },
+    "M032": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M033": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 82
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 659
+    },
+    "M034": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M035": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M037": {
+        "angry": {
+            "count": 88
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 84
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 655
+    },
+    "M039": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M040": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "M041": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 50
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 627
+    },
+    "M042": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "W009": {
+        "angry": {
+            "count": 83
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 87
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 656
+    },
+    "W011": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 86
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 663
+    },
+    "W014": {
+        "angry": {
+            "count": 74
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 89
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 649
+    },
+    "W015": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 87
+        },
+        "count": 664
+    },
+    "W016": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "W018": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "W019": {
+        "angry": {
+            "count": 83
+        },
+        "contempt": {
+            "count": 90
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 663
+    },
+    "W021": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 660
+    },
+    "W023": {
+        "angry": {
+            "count": 85
+        },
+        "contempt": {
+            "count": 84
+        },
+        "disgusted": {
+            "count": 86
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 87
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 652
+    },
+    "W024": {
+        "angry": {
+            "count": 83
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 78
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 86
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 644
+    },
+    "W025": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 87
+        },
+        "count": 661
+    },
+    "W026": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 86
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 663
+    },
+    "W028": {
+        "angry": {
+            "count": 87
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 87
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 89
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 656
+    },
+    "W029": {
+        "angry": {
+            "count": 86
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 84
+        },
+        "fear": {
+            "count": 84
+        },
+        "happy": {
+            "count": 89
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 650
+    },
+    "W033": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 69
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 64
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 39
+        },
+        "sad": {
+            "count": 89
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 621
+    },
+    "W035": {
+        "angry": {
+            "count": 89
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 89
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 665
+    },
+    "W036": {
+        "angry": {
+            "count": 89
+        },
+        "contempt": {
+            "count": 79
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 86
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 84
+        },
+        "surprised": {
+            "count": 83
+        },
+        "count": 641
+    },
+    "W037": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 86
+        },
+        "fear": {
+            "count": 84
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 89
+        },
+        "count": 656
+    },
+    "W038": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
+    },
+    "W040": {
+        "angry": {
+            "count": 90
+        },
+        "contempt": {
+            "count": 87
+        },
+        "disgusted": {
+            "count": 90
+        },
+        "fear": {
+            "count": 90
+        },
+        "happy": {
+            "count": 90
+        },
+        "neutral": {
+            "count": 40
+        },
+        "sad": {
+            "count": 90
+        },
+        "surprised": {
+            "count": 90
+        },
+        "count": 667
     }
 }

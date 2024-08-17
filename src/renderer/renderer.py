@@ -298,3 +298,19 @@ class Renderer(nn.Module):
         shaded_images = albedo_images*shading_images
         
         return shaded_images
+
+
+import trimesh
+class RendererObj(Renderer):
+    
+    def __init__(self, render_full_head=False, obj_filename='assets/head_template.obj', image_size=224):
+        super(RendererObj, self).__init__(render_full_head, obj_filename, image_size)
+
+    def forward(self, vertices, cam_params, **landmarks):
+        # 只生成face，保存为obj，不渲染
+        import ipdb; ipdb.set_trace()
+        # <trimesh.Trimesh(vertices.shape=(5023, 3), faces.shape=(9976, 3))>
+        # <trimesh.Trimesh(vertices.shape=(1787, 3), faces.shape=(3408, 3))>
+        mesh_trimesh = trimesh.Trimesh(vertices=vertices[0].cpu().numpy(), faces=self.faces[0].cpu().numpy())
+        output_file = 'output.obj'
+        mesh_trimesh.export(output_file)

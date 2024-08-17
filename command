@@ -19,10 +19,10 @@ CUDA_VISIBLE_DEVICES=3  python infer_mead.py \
     --crop \
     --dataset_json dataset_.json
 
-CUDA_VISIBLE_DEVICES=2  python render_mead.py \
-    --param_path MEAD/W009/param/happy/level_3/001 \
-    --vid_path MEAD/W009/video/happy/level_3/001.mp4 \
-    --out_path results/ 
+CUDA_VISIBLE_DEVICES=2  python render/render_mead.py \
+    --param_path MEAD/M003/param/neutral/level_1/036 \
+    --vid_path MEAD/M003/video/neutral/level_1/036.mp4 \
+    --out_path output/ 
 
 CUDA_VISIBLE_DEVICES=2  python render_mimic.py \
     --param_path /data/chenziang/codes/Mimic/HDTF-3D/spectre_processed_25fps_16kHz/WRA_VickyHartzler_000/verts_new_shape1.npy \
@@ -46,3 +46,7 @@ ffmpeg -i input.mp3 -ss 00:00:30 -t 00:00:10 -c copy output.mp3
 
 
 
+CUDA_VISIBLE_DEVICES=2  python render/render_mead_obj.py \
+    --param_path MEAD/W009/param/happy/level_3/001 \
+    --vid_path MEAD/W009/video/happy/level_3/001.mp4 \
+    --out_path results/ 

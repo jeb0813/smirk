@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/data/chenziang/codes/smirk')
+
 import torch
 import cv2
 import numpy as np
@@ -14,6 +17,8 @@ import torch.nn.functional as F
 
 from skimage.transform import SimilarityTransform
 
+import trimesh
+
 if __name__ == "__main__":
     import ipdb
     parser = argparse.ArgumentParser()
@@ -27,7 +32,8 @@ if __name__ == "__main__":
 
     # ---- visualize the results ---- #
     flame = FLAME().to(args.device)
-    renderer = Renderer().to(args.device)
+    # renderer = Renderer(render_full_head=True).to(args.device)
+    renderer = Renderer(render_full_head=False).to(args.device)
 
     cap = cv2.VideoCapture(args.vid_path)
 
@@ -46,8 +52,10 @@ if __name__ == "__main__":
     if not os.path.exists(args.out_path):
         os.makedirs(args.out_path)
 
-    cap_out = cv2.VideoWriter(f"{args.out_path}/{args.vid_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (out_width, out_height))
-
+    file_path = '_'.join(args.vid_path.split('.')[0].split('/'))
+    # cap_out = cv2.VideoWriter(f"{args.out_path}/{args.vid_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (out_width, out_height))
+    cap_out = cv2.VideoWriter(f"{args.out_path}/{file_path}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (out_width, out_height))
+    
     cnt=0
     while True:
         cnt+=1
@@ -76,20 +84,30 @@ if __name__ == "__main__":
         outputs = {k:torch.tensor(param[k]).to(args.device) for k in output_params}
         # set pose to zero
         outputs['pose_params'] = torch.zeros_like(outputs['pose_params'])
+
+        # set shape to zero
+        outputs['shape_params'] = torch.zeros_like(outputs['shape_params'])
+
         # share cam params
         if cnt==1:
             cam = outputs['cam']
 
-        import ipdb; ipdb.set_trace()
+        # import ipdb; ipdb.set_trace()
         # vertices [1, 5023, 3]
         flame_output = flame.forward(outputs)
+
+        # temp = flame_output['vertices'].clone().squeeze(0)
+        # temp = temp.cpu().detach().numpy()
+        
+        # # temp保存为txt
+        # np.savetxt(f'results/vertices_{cnt}.txt', temp)
 
         renderer_output = renderer.forward(flame_output['vertices'], cam,
                                             landmarks_fan=flame_output['landmarks_fan'], landmarks_mp=flame_output['landmarks_mp'])
         # [1, 3, 224, 224]
         rendered_img = renderer_output['rendered_img']
 
-        ipdb.set_trace()
+        # ipdb.set_trace()
 
         rendered_img_numpy = (rendered_img.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0).astype(np.uint8)               
         rendered_img_orig = warp(rendered_img_numpy, tform, output_shape=(video_height, video_width), preserve_range=True).astype(np.uint8)
