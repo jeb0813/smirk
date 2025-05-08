@@ -1,18 +1,20 @@
 source activate smirk
 
-CUDA_VISIBLE_DEVICES=3  python demo.py \
+CUDA_VISIBLE_DEVICES=1  python demo.py \
     --input_path samples/test_image2.png \
     --out_path results/ \
     --checkpoint pretrained_models/SMIRK_em1.pt \
     --crop \
-    --render_orig
+    --render_orig \
+    --use_smirk_generator
 
-CUDA_VISIBLE_DEVICES=3  python demo_video.py \
-    --input_path samples/dafoe.mp4 \
+CUDA_VISIBLE_DEVICES=1  python demo_video.py \
+    --input_path samples/justin.mp4 \
     --out_path results/ \
     --checkpoint pretrained_models/SMIRK_em1.pt \
     --crop \
-    --render_orig
+    --render_orig \
+    --use_smirk_generator
 
 CUDA_VISIBLE_DEVICES=3  python infer_mead.py \
     --checkpoint pretrained_models/SMIRK_em1.pt \

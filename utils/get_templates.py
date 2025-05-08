@@ -16,7 +16,16 @@ def get_templates(dataset_path):
             raise FileNotFoundError(f'param_path not found: {param_path}')
         
         param = np.load(param_path)
-        templates[subject] = param
+
+        # 将数据从 NpzFile 对象提取到一个可变的字典中
+        param_dict = {key: param[key] for key in param}
+        
+        # set other params to ZERO
+        remove_keys = ('pose_params', 'eyelid_params')
+        for key in remove_keys:
+            param_dict[key] = np.zeros_like(param_dict[key])
+
+        templates[subject] = param_dict
     
     return templates
 
@@ -27,6 +36,7 @@ if __name__ == "__main__":
     templates = get_templates(dataset_path)
     for key, value in templates.items():
         print(key)
-        np.savez(os.path.join(save_path, f'{key}.npz'), **value)
+        np.savez(os.path.join(save_path, f'{key}_no_eyelid.npz'), **value)
         # np.savez(save_filename, **templates)
 
+        

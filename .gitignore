@@ -15,5 +15,7 @@ __pycache__/
 checkpoints/
 results/
 output/
+templates/
 
 *.npz
+*.mp4

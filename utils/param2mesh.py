@@ -39,6 +39,9 @@ if __name__ == "__main__":
         _param = {key: torch.tensor(_param[key]).squeeze(1).to(device) for key in _param.keys()}
         # set pose to zero
         _param['pose_params'] = torch.zeros_like(_param['pose_params'])
+        # set eyelid to zero
+        _param['eyelid_params'] = torch.zeros_like(_param['eyelid_params'])
+
         vertices = flame.forward(_param)['vertices']
         vertices_np = vertices.squeeze(0).cpu().detach().numpy()
 

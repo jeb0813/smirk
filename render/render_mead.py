@@ -32,8 +32,8 @@ if __name__ == "__main__":
 
     # ---- visualize the results ---- #
     flame = FLAME().to(args.device)
-    # renderer = Renderer(render_full_head=True).to(args.device)
-    renderer = Renderer(render_full_head=False).to(args.device)
+    renderer = Renderer(render_full_head=True).to(args.device)
+    # renderer = Renderer(render_full_head=False).to(args.device)
 
     cap = cv2.VideoCapture(args.vid_path)
 
@@ -85,8 +85,11 @@ if __name__ == "__main__":
         # set pose to zero
         outputs['pose_params'] = torch.zeros_like(outputs['pose_params'])
 
+        # set eyelid to zero
+        outputs['eyelid_params'] = torch.zeros_like(outputs['eyelid_params'])
+
         # set shape to zero
-        outputs['shape_params'] = torch.zeros_like(outputs['shape_params'])
+        # outputs['shape_params'] = torch.zeros_like(outputs['shape_params'])
 
         # share cam params
         if cnt==1:

@@ -44,6 +44,7 @@ if __name__ == '__main__':
     parser.add_argument('--out_path', type=str, default='output', help='Path to save the output (will be created if not exists)')
     parser.add_argument('--use_smirk_generator', action='store_true', help='Use SMIRK neural image to image translator to reconstruct the image')
     parser.add_argument('--render_orig', action='store_true', help='Present the result w.r.t. the original image/video size')
+    parser.add_argument('--freeze_pose', action='store_true', help='Freeze the pose of the FLAME model')
 
     args = parser.parse_args()
 
@@ -73,7 +74,7 @@ if __name__ == '__main__':
     # ---- visualize the results ---- #
 
     flame = FLAME().to(args.device)
-    renderer = Renderer().to(args.device)
+    renderer = Renderer(render_full_head=True).to(args.device)
 
 
     cap = cv2.VideoCapture(args.input_path)
@@ -102,7 +103,13 @@ if __name__ == '__main__':
     if not os.path.exists(args.out_path):
         os.makedirs(args.out_path)
 
-    cap_out = cv2.VideoWriter(f"{args.out_path}/{args.input_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (out_width, out_height))
+    cap_out = cv2.VideoWriter(f"{args.out_path}/temp_{args.input_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (out_width, out_height))
+    # cap_generated = cv2.VideoWriter(f"{args.out_path}/temp_generated_{args.input_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (224,224))
+    cap_mask = cv2.VideoWriter(f"{args.out_path}/temp_mask_{args.input_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (224,224))
+    cap_crop = cv2.VideoWriter(f"{args.out_path}/temp_crop_{args.input_path.split('/')[-1].split('.')[0]}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), video_fps, (224,224))
+
+    if args.freeze_pose:
+        init_flame_output = None
 
     while True:
         ret, image = cap.read()
@@ -133,10 +140,22 @@ if __name__ == '__main__':
         
         cropped_image = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2RGB)
         cropped_image = cv2.resize(cropped_image, (224,224))
+
+        cap_crop.write(cv2.cvtColor(cropped_image, cv2.COLOR_BGR2RGB))
+
         cropped_image = torch.tensor(cropped_image).permute(2,0,1).unsqueeze(0).float()/255.0
         cropped_image = cropped_image.to(args.device)
 
         outputs = smirk_encoder(cropped_image)
+
+        #####
+        if args.freeze_pose:
+            if init_flame_output is None:
+                init_flame_output = outputs
+            
+            outputs['pose_params'] = init_flame_output['pose_params']
+
+
 
         flame_output = flame.forward(outputs)
         renderer_output = renderer.forward(flame_output['vertices'], outputs['cam'],
@@ -163,7 +182,6 @@ if __name__ == '__main__':
             if (kpt_mediapipe is None):
                 print('Could not find landmarks for the image using mediapipe and cannot create the hull mask for the smirk generator. Exiting...')
                 exit()
-
             mask_ratio_mul = 5
             mask_ratio = 0.01
             mask_dilation_radius = 10
@@ -208,11 +226,65 @@ if __name__ == '__main__':
             else:
                 grid = torch.cat([grid, reconstructed_img], dim=3)
 
+            
+
         grid_numpy = grid.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0
         grid_numpy = grid_numpy.astype(np.uint8)
         grid_numpy = cv2.cvtColor(grid_numpy, cv2.COLOR_BGR2RGB)
         cap_out.write(grid_numpy)
+        # cap_generated.write(cv2.cvtColor(reconstructed_img_numpy, cv2.COLOR_BGR2RGB))
+        # cap_generated.write(cv2.cvtColor(rendered_img_orig.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0, cv2.COLOR_BGR2RGB))
+        
+        # import ipdb; ipdb.set_trace()
+        # cap_mask.write(cv2.cvtColor(rendered_img_numpy, cv2.COLOR_BGR2RGB))
+        temp = rendered_img_orig.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0
+        cap_mask.write(cv2.cvtColor(temp.astype(np.uint8), cv2.COLOR_BGR2RGB))
+        
 
     cap.release()
     cap_out.release()
+    # cap_generated.release()
+    cap_mask.release()
+    cap_crop.release()
+    
 
+    cmd = ('ffmpeg' + ' -i {0} -pix_fmt yuv420p -qscale 0 {1}'.format(
+        f"{args.out_path}/temp_{args.input_path.split('/')[-1].split('.')[0]}.mp4", 
+        f"{args.out_path}/{args.input_path.split('/')[-1].split('.')[0]}.mp4"
+        )).split()
+            
+    # call(cmd)
+    os.system(' '.join(cmd))
+
+    cmd = ('ffmpeg' + ' -i {0} -pix_fmt yuv420p -qscale 0 {1}'.format(
+        f"{args.out_path}/temp_generated_{args.input_path.split('/')[-1].split('.')[0]}.mp4", 
+        f"{args.out_path}/generated_{args.input_path.split('/')[-1].split('.')[0]}.mp4"
+        )).split()
+    
+    os.system(' '.join(cmd))
+
+    cmd = ('ffmpeg' + ' -i {0} -pix_fmt yuv420p -qscale 0 {1}'.format(
+        f"{args.out_path}/temp_mask_{args.input_path.split('/')[-1].split('.')[0]}.mp4", 
+        f"{args.out_path}/mask_{args.input_path.split('/')[-1].split('.')[0]}.mp4"
+        )).split()
+    
+    os.system(' '.join(cmd))
+
+    cmd = ('ffmpeg' + ' -i {0} -pix_fmt yuv420p -qscale 0 {1}'.format(
+        f"{args.out_path}/temp_crop_{args.input_path.split('/')[-1].split('.')[0]}.mp4", 
+        f"{args.out_path}/crop_{args.input_path.split('/')[-1].split('.')[0]}.mp4"
+        )).split()
+    
+    os.system(' '.join(cmd))
+
+    if os.path.exists(f"{args.out_path}/temp_{args.input_path.split('/')[-1].split('.')[0]}.mp4"):
+        os.remove(f"{args.out_path}/temp_{args.input_path.split('/')[-1].split('.')[0]}.mp4")
+
+    if os.path.exists(f"{args.out_path}/temp_generated_{args.input_path.split('/')[-1].split('.')[0]}.mp4"):
+        os.remove(f"{args.out_path}/temp_generated_{args.input_path.split('/')[-1].split('.')[0]}.mp4")
+
+    if os.path.exists(f"{args.out_path}/temp_mask_{args.input_path.split('/')[-1].split('.')[0]}.mp4"):
+        os.remove(f"{args.out_path}/temp_mask_{args.input_path.split('/')[-1].split('.')[0]}.mp4")
+
+    if os.path.exists(f"{args.out_path}/temp_crop_{args.input_path.split('/')[-1].split('.')[0]}.mp4"):
+        os.remove(f"{args.out_path}/temp_crop_{args.input_path.split('/')[-1].split('.')[0]}.mp4")

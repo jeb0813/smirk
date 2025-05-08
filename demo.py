@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     image_size = 224
     
-    ipdb.set_trace()
+    # ipdb.set_trace()
 
     # ----------------------- initialize configuration ----------------------- #
     smirk_encoder = SmirkEncoder().to(args.device)
@@ -76,7 +76,7 @@ if __name__ == '__main__':
     renderer = Renderer().to(args.device)
 
 
-    ipdb.set_trace()
+    # ipdb.set_trace()
     # check if input is an image or a video or webcam or directory
     image = cv2.imread(args.input_path)
     orig_image_height, orig_image_width, _ = image.shape
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     cropped_image = cropped_image.to(args.device)
 
     # doing forwoard pass
-    ipdb.set_trace()
+    # ipdb.set_trace()
     outputs = smirk_encoder(cropped_image)
 
 
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     
     rendered_img = renderer_output['rendered_img']
 
-    ipdb.set_trace()
+    # ipdb.set_trace()
     if args.render_orig:
         if args.crop:
             rendered_img_numpy = (rendered_img.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0).astype(np.uint8)               
@@ -187,7 +187,7 @@ if __name__ == '__main__':
             grid = torch.cat([grid, reconstructed_img], dim=3)
 
 
-    ipdb.set_trace()
+    # ipdb.set_trace()
     grid_numpy = grid.squeeze(0).permute(1,2,0).detach().cpu().numpy()*255.0
     grid_numpy = grid_numpy.astype(np.uint8)
     grid_numpy = cv2.cvtColor(grid_numpy, cv2.COLOR_BGR2RGB)
