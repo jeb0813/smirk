@@ -52,3 +52,20 @@ CUDA_VISIBLE_DEVICES=2  python render/render_mead_obj.py \
     --param_path MEAD/W009/param/happy/level_3/001 \
     --vid_path MEAD/W009/video/happy/level_3/001.mp4 \
     --out_path results/ 
+
+
+
+
+
+CUDA_VISIBLE_DEVICES=3 python datasets/preprocess_scripts/apply_mediapipe_to_dataset.py \
+    --input_dir /data/chenziang/codes/smirk/dataset/ffhq_unzip \
+    --output_dir /data/chenziang/codes/smirk/dataset/ffhq_mediapipe_landmarks
+
+
+CUDA_VISIBLE_DEVICES=3 python datasets/preprocess_scripts/apply_fan_to_dataset.py \
+    --input_dir /data/chenziang/codes/smirk/dataset/ffhq_unzip \
+    --output_dir /data/chenziang/codes/smirk/dataset/ffhq_fan_landmarks
+
+
+
+    

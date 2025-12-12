@@ -19,3 +19,8 @@ templates/
 
 *.npz
 *.mp4
+
+face_detection/
+emotion_recognition/
+face_alignment/
+
