@@ -68,4 +68,16 @@ CUDA_VISIBLE_DEVICES=3 python datasets/preprocess_scripts/apply_fan_to_dataset.p
 
 
 
+CUDA_VISIBLE_DEVICES=3 python datasets/preprocess_scripts/apply_mediapipe_to_dataset_mead.py \
+    --input_dir /data3/chenziang/_dataset/MEAD \
+    --output_dir /data4/chenziang/mead_smirk/mediapipe_landmarks \
+    --num_processes 32
+
+CUDA_VISIBLE_DEVICES=3 python datasets/preprocess_scripts/apply_fan_to_dataset_mead.py \
+    --input_dir /data3/chenziang/_dataset/MEAD \
+    --output_dir /data4/chenziang/mead_smirk/fan_landmarks \
+    --num_processes 8
+
+
+
     

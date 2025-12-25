@@ -1,3 +1,6 @@
+import os
+os.environ['GLOG_minloglevel'] = '2'
+
 import numpy as np
 import mediapipe as mp
 from mediapipe.tasks import python
@@ -115,13 +118,44 @@ def process_sample(args):
     process_file(root, file_name, face_detector)
 
 if __name__ == '__main__':
-    ipdb.set_trace()
+    # ipdb.set_trace()
     all_files = []
 
-    for root, _, files in os.walk(args.input_dir):
-        for file_name in files:
-            if file_name.lower().endswith(('.jpg', '.png', '.mp4', '.avi')):
-                all_files.append((root, file_name))
+    for subject_id in os.listdir(args.input_dir):
+        subject_dir = os.path.join(args.input_dir, subject_id)
+        if not os.path.isdir(subject_dir):
+            continue
+
+        # 每个被试的 video 目录
+        video_root = os.path.join(subject_dir, "video")
+        if not os.path.isdir(video_root):
+            continue
+
+        # 遍历 emotion（angry, happy, ...）
+        for emotion in os.listdir(video_root):
+            emotion_dir = os.path.join(video_root, emotion)
+            if not os.path.isdir(emotion_dir):
+                continue
+
+            # 遍历 level（level_1, level_2, level_3）
+            for level in os.listdir(emotion_dir):
+                level_dir = os.path.join(emotion_dir, level)
+                if not os.path.isdir(level_dir):
+                    continue
+
+                # 最后才是具体的 mp4 文件
+                for file_name in os.listdir(level_dir):
+                    if file_name.lower().endswith(('.mp4', '.avi')):
+                        all_files.append((level_dir, file_name))
+    # ipdb.set_trace()
+    print(len(all_files))
+
+    # process_sample(all_files[0])
+
+    # for root, _, files in os.walk(args.input_dir):
+    #     for file_name in files:
+    #         if file_name.lower().endswith(('.jpg', '.png', '.mp4', '.avi')):
+    #             all_files.append((root, file_name))
 
     with Pool(args.num_processes) as pool:
         list(tqdm(pool.imap(process_sample, all_files), total=len(all_files)))

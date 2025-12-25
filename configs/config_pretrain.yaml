@@ -1,7 +1,7 @@
 resume:
 load_encoder: True
 load_fuse_generator: True
-device: cuda:0
+device: cuda:3
 image_size: 224
 K: 1 # temporal sequence length
 
@@ -59,29 +59,33 @@ render:
   
 
 dataset:
-  LRS3_path: /gpu-data4/filby/LRS3
-  LRS3_landmarks_path: /gpu-data4/filby/LRS3_landmarks
+  # LRS3_path: /gpu-data4/filby/LRS3
+  # LRS3_landmarks_path: /gpu-data4/filby/LRS3_landmarks
 
-  MEAD_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/videos
-  MEAD_fan_landmarks_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/fan_landmarks_hhj1897
-  MEAD_mediapipe_landmarks_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/mediapipe_landmarks
+  # MEAD_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/videos
+  # MEAD_fan_landmarks_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/fan_landmarks_hhj1897
+  # MEAD_mediapipe_landmarks_path: /gpu-data4/filby/MEAD_preprocessed/MEAD_front/mediapipe_landmarks
 
-  FFHQ_path: /gpu-data4/filby/FFHQ256/ffhq256
-  FFHQ_fan_landmarks_path: /gpu-data4/filby/FFHQ256/fan_landmarks_hhj1897
-  FFHQ_mediapipe_landmarks_path: /gpu-data4/filby/FFHQ256/mediapipe_landmarks
+  # FFHQ_path: /gpu-data4/filby/FFHQ256/ffhq256
+  # FFHQ_fan_landmarks_path: /gpu-data4/filby/FFHQ256/fan_landmarks_hhj1897
+  # FFHQ_mediapipe_landmarks_path: /gpu-data4/filby/FFHQ256/mediapipe_landmarks
 
-  CelebA_path: /gpu-data4/filby/CelebA/img_align_celeba
-  CelebA_fan_landmarks_path: /gpu-data4/filby/CelebA/fan_landmarks_hhj1897
-  CelebA_mediapipe_landmarks_path: /gpu-data4/filby/CelebA/mediapipe_landmarks
+  FFHQ_path: /data/chenziang/codes/smirk/dataset/ffhq_unzip
+  FFHQ_fan_landmarks_path: /data/chenziang/codes/smirk/dataset/ffhq_fan_landmarks
+  FFHQ_mediapipe_landmarks_path: /data/chenziang/codes/smirk/dataset/ffhq_mediapipe_landmarks
 
-  MEAD_sides_path: /gpu-data4/filby/MEAD_preprocessed
+  # CelebA_path: /gpu-data4/filby/CelebA/img_align_celeba
+  # CelebA_fan_landmarks_path: /gpu-data4/filby/CelebA/fan_landmarks_hhj1897
+  # CelebA_mediapipe_landmarks_path: /gpu-data4/filby/CelebA/mediapipe_landmarks
 
-  LRS3_percentage: 0.2 #0.2
-  LRS3_temporal_sampling: False
-  MEAD_percentage: 0.1 #0.2
+  # MEAD_sides_path: /gpu-data4/filby/MEAD_preprocessed
+
+  # LRS3_percentage: 0.2 #0.2
+  # LRS3_temporal_sampling: False
+  # MEAD_percentage: 0.1 #0.2
   FFHQ_percentage: 0.3 #0.3
-  CelebA_percentage: 0.3 #0.2
-  MEAD_sides_percentage: 0.1 #0.1
+  # CelebA_percentage: 0.3 #0.2
+  # MEAD_sides_percentage: 0.1 #0.1
   sample_full_video_for_testing: False
 
 
